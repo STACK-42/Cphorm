@@ -1,59 +1,84 @@
-import { Button } from '@/components/ui/button';
-import { PlayCircle, Users } from 'lucide-react';
 
-const HeroSection = () => {
+import React from 'react';
+import { Activity } from 'lucide-react';
+import { Button } from './ui/button';
+
+export const HeroSection = () => {
   return (
-    <section className="min-h-[80vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 bg-white pt-32">
-      <div className="max-w-5xl mx-auto text-center">
+    <div className="container mx-auto px-6 py-20">
+      <div className="text-center max-w-4xl mx-auto">
         {/* Main Headline */}
-        <div className="animate-fade-in mb-12">
-          <h1 className="text-5xl md:text-7xl font-bold text-midnight mb-6 leading-tight font-google-sans">
-            Simple, Insightful,
-            <br />
-            <span className="text-cool-blue">Trustworthy</span>
-          </h1>
-        </div>
-
+        <h1 className="text-5xl md:text-6xl font-bold text-midnight font-poppins mb-6 leading-tight">
+          Simple, Insightful, Trustworthy
+        </h1>
+        
         {/* Subtitle */}
-        <div className="animate-fade-in mb-16" style={{ animationDelay: '0.2s' }}>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Certified Provider By The Sudanese Authority for DATA Governance & insight
-          </p>
-        </div>
-
+        <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+          Certified Provider By The Sudanese Authority for DATA Governance & insight
+        </p>
+        
         {/* Call-to-Action Buttons */}
-        <div className="animate-fade-in flex flex-col sm:flex-row gap-4 justify-center mb-24" style={{ animationDelay: '0.4s' }}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <Button 
             size="lg" 
-            className="bg-cool-blue hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-medium hover-scale transition-all duration-200"
+            className="bg-cool-blue hover:bg-cool-blue/90 text-white rounded-full px-8 py-4 text-lg font-semibold"
           >
-            <Users className="w-5 h-5 mr-2" />
             Free Registration
           </Button>
           <Button 
             size="lg" 
-            className="bg-cool-blue hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-medium hover-scale transition-all duration-200"
+            className="bg-cool-blue hover:bg-cool-blue/90 text-white rounded-full px-8 py-4 text-lg font-semibold"
           >
-            <PlayCircle className="w-5 h-5 mr-2" />
             Communication
           </Button>
         </div>
-
-        {/* Image Placeholder */}
-        <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-soft-gray rounded-2xl p-8 md:p-12 shadow-lg">
-              <img 
-                src="/assets/images/platform-preview.png" 
-                alt="Platform Preview" 
-                className="w-full h-auto rounded-lg"
-              />
+        
+        {/* Placeholder Box */}
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-white border-4 border-midnight rounded-3xl p-8 shadow-lg">
+            <div className="aspect-video bg-soft-gray rounded-2xl flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-cool-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Activity className="h-8 w-8 text-cool-blue" />
+                </div>
+                <h3 className="text-xl font-semibold text-midnight mb-2">
+                  Smart Health Data Collection
+                </h3>
+                <p className="text-gray-600">
+                  Placeholder for demo video or interactive preview
+                </p>
+              </div>
             </div>
           </div>
         </div>
+        
+        {/* Additional Info Section */}
+        <div className="mt-20 grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="text-center">
+            <div className="w-12 h-12 bg-cool-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Activity className="h-6 w-6 text-cool-blue" />
+            </div>
+            <h3 className="text-lg font-semibold text-midnight mb-2">Smart Forms</h3>
+            <p className="text-gray-600">Dynamic form generation for efficient data collection</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="w-12 h-12 bg-cool-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Activity className="h-6 w-6 text-cool-blue" />
+            </div>
+            <h3 className="text-lg font-semibold text-midnight mb-2">Reliable Data</h3>
+            <p className="text-gray-600">Secure and accurate health data management</p>
+          </div>
+          
+          <div className="text-center">
+            <div className="w-12 h-12 bg-cool-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Activity className="h-6 w-6 text-cool-blue" />
+            </div>
+            <h3 className="text-lg font-semibold text-midnight mb-2">Public Service</h3>
+            <p className="text-gray-600">Focused on equity, alerts, and community insight</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
-
-export default HeroSection;
