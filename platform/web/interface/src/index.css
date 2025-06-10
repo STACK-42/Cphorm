@@ -1,0 +1,120 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cphorm Design System - Health Data Collection Platform */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White background */
+    --foreground: 220 13% 9%; /* Midnight text */
+
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 220 13% 9%; /* Midnight text on cards */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 9%;
+
+    --primary: 217 91% 60%; /* Cool Blue */
+    --primary-foreground: 0 0% 100%; /* White text on cool blue */
+
+    --secondary: 220 13% 95%; /* Soft Gray */
+    --secondary-foreground: 220 13% 9%; /* Midnight text */
+
+    --muted: 220 13% 95%; /* Soft Gray for muted elements */
+    --muted-foreground: 215 25% 27%; /* Darker gray for muted text */
+
+    --accent: 220 13% 95%; /* Soft Gray accents */
+    --accent-foreground: 220 13% 9%; /* Midnight text on accents */
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%; /* Light border color */
+    --input: 220 13% 91%; /* Input border color */
+    --ring: 217 91% 60%; /* Cool Blue focus ring */
+
+    --radius: 0.75rem; /* Increased radius for modern look */
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 13% 9%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 13% 9%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 13% 9%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 13% 9%;
+
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 25% 27%;
+    --muted-foreground: 220 13% 95%;
+
+    --accent: 215 25% 27%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 27%;
+    --input: 215 25% 27%;
+    --ring: 217 91% 60%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Custom gradient for Cphorm header */
+.cphorm-gradient {
+  background: linear-gradient(135deg, #2563EB 0%, #F3F4F6 100%);
+}
+
+/* Smooth transitions for interactive elements */
+.transition-smooth {
+  transition: all 0.2s ease-in-out;
+}
