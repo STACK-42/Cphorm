@@ -1,0 +1,1 @@
+- Add a "search by ID" feature: a five-digit number that doctors share with patients, so they can give it to other doctors using the platform to view patient history and status.
