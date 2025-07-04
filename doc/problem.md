@@ -40,24 +40,4 @@ old one
 
 
 
-Doctors in Sudan are using old-fashioned paperwork to track and save patient records. This can cause the records to be lost or damaged, and it takes a long time to search through all these problems. Doctors deal with these issues, which takes their precious time that could have been spent saving lives.
-
-So, my team and I came up
-why dont we help the docters ?
-but how ?
-
-we thought we shoud provide a safe easy to use platform where they can save navigate and manage pationts helth records with exilent history tracking.
-
-docter can log in and see all his pationts recrods 
-
-they can create new records from scretch or just fill form templates
-
-he can search with name and filter with age or gender, etc and
-
-they can update existing recods and the previous recode wont be lost but will be added to pationt history 
-
-
-we also plan to add an AI assistant that is aware of the pationt status and history  to help the docter dignoses and give advice 
-
-
-
+Doctors in Sudan are using old-fashioned paperwork to track and save patient records. This can cause the records to be lost or damaged, and it takes a long time to search through all these problems. Doctors deal with these issues, which takes their precious time that could have been spent saving lives.So, my team and I came upWhy don't we help the doctors?But how?We thought we should provide a safe, easy-to-use platform where they can save, navigate, and manage patients health records with excellent history tracking.The doctor can log in and see all his patients records. They can create new records from scratch or just fill out form templates.He can search with name and filter with age or gender, etc., andThey can update existing records, and the previous record won't be lost but will be added to the patient history. We also plan to add an AI assistant that is aware of the patient's status and history to help the doctor diagnose and give advice. 
