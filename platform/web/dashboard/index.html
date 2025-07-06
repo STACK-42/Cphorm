@@ -21,7 +21,7 @@
       </header>
 
       <!-- Hero Section -->
-      <section class="relative bg-white text-center py-16 px-6">
+      <section id="hero-section" class="relative bg-white text-center py-16 px-6">
         <!-- Background Image -->
         <div class="absolute inset-0 bg-center bg-no-repeat opacity-20" style="background-image: url('assets/Asset4.svg');"></div>
 
@@ -33,11 +33,55 @@
           <p class="text-base md:text-lg text-gray-700 opacity-90 mb-6">
             Designed for field workers, researchers, and organizations working in connectivity-challenged regions.
           </p>
-          <a href="/signup" class="inline-block bg-blue-600 text-white text-base font-medium py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 transition">
+          <a id="show-forms-btn" href="javascript:void(0)" class="inline-block bg-blue-600 text-white text-base font-medium py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 transition">
             Sign Up Now
           </a>
         </div>
       </section>
+
+      <!-- Forms Section -->
+      <section id="forms-section" class="hidden bg-gray-100 py-16 px-6">
+        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+          <div class="flex justify-center gap-4 mb-6">
+            <button id="show-signup-btn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+              Sign Up
+            </button>
+            <button id="show-login-btn" class="bg-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-400 transition">
+              Log In
+            </button>
+          </div>
+          <!-- Sign-Up Form -->
+          <form id="signup-form" class="hidden">
+            <h2 class="text-xl font-bold mb-4">Sign Up</h2>
+            <input type="text" placeholder="Full Name" class="w-full mb-4 p-2 border rounded-lg" required />
+            <input type="email" placeholder="Email" class="w-full mb-4 p-2 border rounded-lg" required />
+            <input type="password" placeholder="Password" class="w-full mb-4 p-2 border rounded-lg" required />
+            <input type="text" placeholder="Doctor Name" class="w-full mb-4 p-2 border rounded-lg" required />
+            <input type="text" placeholder="Specialty" class="w-full mb-4 p-2 border rounded-lg" required />
+            <input type="text" placeholder="Hospital Name" class="w-full mb-4 p-2 border rounded-lg" required />
+            <input type="text" placeholder="Location" class="w-full mb-4 p-2 border rounded-lg" required />
+            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+              Sign Up
+            </button>
+          </form>
+          <!-- Log-In Form -->
+          <form id="login-form" class="hidden">
+            <h2 class="text-xl font-bold mb-4">Log In</h2>
+            <input type="email" placeholder="Email" class="w-full mb-4 p-2 border rounded-lg" required />
+            <input type="password" placeholder="Password" class="w-full mb-4 p-2 border rounded-lg" required />
+            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+              Log In
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-[#F3F4F6] text-center py-4 border-t border-[#e7edf4]">
+        <p class="text-sm text-gray-600">
+          &copy; 2025 Cphorm. All rights reserved.
+        </p>
+      </footer>
 
       <style>
         @keyframes text-glow {
@@ -56,6 +100,44 @@
           animation: text-glow 2s infinite alternate;
         }
       </style>
+
+      <script>
+        // Get elements
+        const heroSection = document.getElementById("hero-section");
+        const formsSection = document.getElementById("forms-section");
+        const showFormsBtn = document.getElementById("show-forms-btn");
+        const signupForm = document.getElementById("signup-form");
+        const loginForm = document.getElementById("login-form");
+        const showSignupBtn = document.getElementById("show-signup-btn");
+        const showLoginBtn = document.getElementById("show-login-btn");
+
+        // Show forms section and hide hero section
+        showFormsBtn.addEventListener("click", () => {
+          heroSection.classList.add("hidden");
+          formsSection.classList.remove("hidden");
+          signupForm.classList.remove("hidden");
+          loginForm.classList.add("hidden");
+        });
+
+        // Toggle between Sign-Up and Log-In forms
+        showSignupBtn.addEventListener("click", () => {
+          signupForm.classList.remove("hidden");
+          loginForm.classList.add("hidden");
+          showSignupBtn.classList.add("bg-blue-600", "text-white");
+          showSignupBtn.classList.remove("bg-gray-300", "text-gray-700");
+          showLoginBtn.classList.add("bg-gray-300", "text-gray-700");
+          showLoginBtn.classList.remove("bg-blue-600", "text-white");
+        });
+
+        showLoginBtn.addEventListener("click", () => {
+          loginForm.classList.remove("hidden");
+          signupForm.classList.add("hidden");
+          showLoginBtn.classList.add("bg-blue-600", "text-white");
+          showLoginBtn.classList.remove("bg-gray-300", "text-gray-700");
+          showSignupBtn.classList.add("bg-gray-300", "text-gray-700");
+          showSignupBtn.classList.remove("bg-blue-600", "text-white");
+        });
+      </script>
         
       </body>
       </html>
