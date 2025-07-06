@@ -6,19 +6,24 @@
     <link rel="icon" type="image/png" href="../assets/Asset7.svg" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    </head>
-    <body class="bg-slate-50 min-h-screen">
+  </head>
+  <body class="bg-slate-50 min-h-screen">
     <!-- Header --> 
     <header class="flex items-center justify-between bg-[#F3F4F6] border-b border-[#e7edf4] px-10 py-3">
-        <div class="flex items-center gap-4">
-          <img src="assets/Asset7.svg" alt="Logo" class="h-16 w-16 object-contain" />
-        </div>
-        <div class="flex items-center gap-4">
-          <span class="text-[#0d141c] text-sm font-medium">Profile</span>
-          <div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10" style='background-image: url("assets/profile01.JPG");'></div>
-        </div>
-      </header>
+      <div class="flex items-center gap-4">
+        <img src="assets/Asset7.svg" alt="Logo" class="h-16 w-16 object-contain" />
+      </div>
+      <nav class="flex items-center gap-6">
+        <a href="#about-us" class="text-[#0d141c] text-sm font-medium hover:text-blue-600 transition">
+          About Us
+        </a>
+        <a href="#contact-us" class="text-[#0d141c] text-sm font-medium hover:text-blue-600 transition">
+          Contact Us
+        </a>
+      </nav>
+    </header>
 
       <!-- Hero Section -->
       <section id="hero-section" class="relative bg-white text-center py-16 px-6">
@@ -40,8 +45,12 @@
       </section>
 
       <!-- Forms Section -->
-      <section id="forms-section" class="hidden bg-gray-100 py-16 px-6">
-        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+      <section id="forms-section" class="hidden bg-gray-100 py-16 px-6 relative">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-center bg-no-repeat opacity-20" style="background-image: url('assets/Asset4.svg');"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
           <div class="flex justify-center gap-4 mb-6">
             <button id="show-signup-btn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
               Sign Up
@@ -83,61 +92,7 @@
         </p>
       </footer>
 
-      <style>
-        @keyframes text-glow {
-          0% {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
-          }
-          50% {
-            text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
-          }
-          100% {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
-          }
-        }
-
-        .animate-text-glow {
-          animation: text-glow 2s infinite alternate;
-        }
-      </style>
-
-      <script>
-        // Get elements
-        const heroSection = document.getElementById("hero-section");
-        const formsSection = document.getElementById("forms-section");
-        const showFormsBtn = document.getElementById("show-forms-btn");
-        const signupForm = document.getElementById("signup-form");
-        const loginForm = document.getElementById("login-form");
-        const showSignupBtn = document.getElementById("show-signup-btn");
-        const showLoginBtn = document.getElementById("show-login-btn");
-
-        // Show forms section and hide hero section
-        showFormsBtn.addEventListener("click", () => {
-          heroSection.classList.add("hidden");
-          formsSection.classList.remove("hidden");
-          signupForm.classList.remove("hidden");
-          loginForm.classList.add("hidden");
-        });
-
-        // Toggle between Sign-Up and Log-In forms
-        showSignupBtn.addEventListener("click", () => {
-          signupForm.classList.remove("hidden");
-          loginForm.classList.add("hidden");
-          showSignupBtn.classList.add("bg-blue-600", "text-white");
-          showSignupBtn.classList.remove("bg-gray-300", "text-gray-700");
-          showLoginBtn.classList.add("bg-gray-300", "text-gray-700");
-          showLoginBtn.classList.remove("bg-blue-600", "text-white");
-        });
-
-        showLoginBtn.addEventListener("click", () => {
-          loginForm.classList.remove("hidden");
-          signupForm.classList.add("hidden");
-          showLoginBtn.classList.add("bg-blue-600", "text-white");
-          showLoginBtn.classList.remove("bg-gray-300", "text-gray-700");
-          showSignupBtn.classList.add("bg-gray-300", "text-gray-700");
-          showSignupBtn.classList.remove("bg-blue-600", "text-white");
-        });
-      </script>
+      <script src="js/scripts.js"></script>
         
       </body>
       </html>
