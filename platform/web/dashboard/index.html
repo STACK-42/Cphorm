@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Form</title>
+    <link rel="icon" type="image/png" href="../assets/Asset7.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    </head>
+    <body class="bg-slate-50 min-h-screen">
+    <!-- Header --> 
+    <header class="flex items-center justify-between bg-[#F3F4F6] border-b border-[#e7edf4] px-10 py-3">
+        <div class="flex items-center gap-4">
+          <img src="assets/Asset7.svg" alt="Logo" class="h-16 w-16 object-contain" />
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-[#0d141c] text-sm font-medium">Profile</span>
+          <div class="bg-center bg-no-repeat bg-cover rounded-full h-10 w-10" style='background-image: url("assets/profile01.JPG");'></div>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="relative bg-white text-center py-16 px-6">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-center bg-no-repeat opacity-20" style="background-image: url('assets/Asset4.svg');"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-3xl mx-auto mt-10">
+          <h1 class="text-3xl md:text-5xl font-bold text-blue-600 mb-4">
+            A Lightweight, Offline-First Health Data Platform
+          </h1>
+          <p class="text-base md:text-lg text-gray-700 opacity-90 mb-6">
+            Designed for field workers, researchers, and organizations working in connectivity-challenged regions.
+          </p>
+          <a href="/signup" class="inline-block bg-blue-600 text-white text-base font-medium py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 transition">
+            Sign Up Now
+          </a>
+        </div>
+      </section>
+
+      <style>
+        @keyframes text-glow {
+          0% {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+          }
+          50% {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+          }
+          100% {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+          }
+        }
+
+        .animate-text-glow {
+          animation: text-glow 2s infinite alternate;
+        }
+      </style>
+        
+      </body>
+      </html>
