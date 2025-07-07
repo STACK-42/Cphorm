@@ -1,5 +1,22 @@
 console.log('Cphorm dynamic form JS loaded');
 
+// DOM Elements
+const customizeBtn = document.getElementById("customize-btn");
+const configPanel = document.getElementById("config-panel");
+const btnWrapper = document.getElementById("customize-button-wrapper");
+const formTitle = document.getElementById("form-title");
+const selectorsContainer = document.getElementById('field-selectors');
+const form = document.getElementById('dynamic-form');
+const dynamicFields = document.getElementById('dynamic-fields');
+const customFieldForm = document.getElementById('custom-field-form');
+const customFieldName = document.getElementById('custom-field-name');
+const customFieldType = document.getElementById('custom-field-type');
+const customFieldOptions = document.getElementById('custom-field-options');
+const notification = document.getElementById('notification');
+const backBtn = document.getElementById('back-btn');
+const submitTemplateBtn = document.getElementById('submit-template-btn');
+
+// Field definitions
 const FIELD_DEFS = {
   full_name: { label: "Full Name", placeholder: "Enter full name" },
   age: { label: "Age", placeholder: "Enter age", type: "number" },
@@ -31,11 +48,76 @@ const FIELD_DEFS = {
   },
 };
 
-const selectorsContainer = document.getElementById('field-selectors');
-const form = document.getElementById('dynamic-form');
-const dynamicFields = document.getElementById('dynamic-fields');
+// Template form fields
+const TEMPLATE_FIELDS = `
+  <div class="flex flex-col gap-4">
+    <label class="block">
+      <span class="text-gray-700">Name</span>
+      <input type="text" name="name" class="mt-1 block w-full rounded-md border border-gray-300 p-2" />
+    </label>
+    <label class="block">
+      <span class="text-gray-700">Age</span>
+      <input type="number" name="age" class="mt-1 block w-full rounded-md border border-gray-300 p-2" />
+    </label>
+    <label class="block">
+      <span class="text-gray-700">Sex</span>
+      <select name="sex" class="mt-1 block w-full rounded-md border border-gray-300 p-2">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </label>
+    <label class="block">
+      <span class="text-gray-700">Main Complaints</span>
+      <textarea name="main_complaints" class="mt-1 block w-full rounded-md border border-gray-300 p-2"></textarea>
+    </label>
+    <label class="block">
+      <span class="text-gray-700">Final Diagnosis</span>
+      <textarea name="final_diagnosis" class="mt-1 block w-full rounded-md border border-gray-300 p-2"></textarea>
+    </label>
+    <label class="block">
+      <span class="text-gray-700">Doctor Discharge Notes</span>
+      <textarea name="doctor_discharge_notes" class="mt-1 block w-full rounded-md border border-gray-300 p-2"></textarea>
+    </label>
+  </div>
+`;
 
-selectorsContainer.addEventListener('change', () => {
+// Initialize the app
+function init() {
+  // Set up event listeners
+  customizeBtn.addEventListener('click', toggleConfigPanel);
+  selectorsContainer.addEventListener('change', generateFormFields);
+  form.addEventListener('submit', handleFormSubmit);
+  customFieldType.addEventListener('change', toggleOptionsField);
+  customFieldForm.addEventListener('submit', handleCustomFieldSubmit);
+  backBtn.addEventListener('click', showTemplateForm);
+  submitTemplateBtn.addEventListener('click', submitTemplateForm);
+  window.addEventListener('online', trySync);
+  
+  // Try to sync if online
+  if (navigator.onLine) trySync();
+}
+
+// Toggle configuration panel
+function toggleConfigPanel() {
+  configPanel.classList.remove("hidden");
+  btnWrapper.classList.add("hidden");
+  formTitle.textContent = "Form Preview";
+  dynamicFields.innerHTML = "";
+  backBtn.classList.remove("hidden");
+}
+
+// Show template form
+function showTemplateForm() {
+  configPanel.classList.add("hidden");
+  btnWrapper.classList.remove("hidden");
+  formTitle.textContent = "Template Form";
+  dynamicFields.innerHTML = TEMPLATE_FIELDS;
+  backBtn.classList.add("hidden");
+}
+
+// Generate form fields based on selections
+function generateFormFields() {
   const selectedKeys = Array.from(selectorsContainer.querySelectorAll('input[type="checkbox"]:checked'))
     .map(cb => cb.dataset.key);
 
@@ -62,7 +144,27 @@ selectorsContainer.addEventListener('change', () => {
     wrapper.innerHTML = `<p class="text-[#0d141c] text-base font-medium leading-normal pb-2">${field.label}</p>${inputHTML}`;
     dynamicFields.appendChild(wrapper);
   });
-});
+}
+
+// Handle template form submission
+async function submitTemplateForm(e) {
+  e.preventDefault();
+  const formData = {};
+  new FormData(form).forEach((value, key) => formData[key] = value);
+
+  // Save to IndexedDB
+  await saveFormLocally({
+    ...formData,
+    timestamp: Date.now()
+  });
+
+  notification.textContent = "Template form saved locally! Will sync when online.";
+  notification.classList.remove('hidden');
+  setTimeout(() => {
+    notification.classList.add('hidden');
+    form.reset();
+  }, 2000);
+}
 
 // IndexedDB setup
 const DB_NAME = 'cphorm_db';
@@ -114,8 +216,8 @@ async function clearUploadedForms(ids) {
   return tx.complete;
 }
 
-// Modify form submit to save locally
-form.addEventListener('submit', async function (e) {
+// Handle form submission
+async function handleFormSubmit(e) {
   e.preventDefault();
   const formData = {};
   new FormData(form).forEach((value, key) => formData[key] = value);
@@ -126,7 +228,6 @@ form.addEventListener('submit', async function (e) {
     timestamp: Date.now()
   });
 
-  const notification = document.getElementById('notification');
   notification.textContent = "Form saved locally! Will sync when online.";
   notification.classList.remove('hidden');
   setTimeout(() => {
@@ -135,11 +236,9 @@ form.addEventListener('submit', async function (e) {
     selectorsContainer.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
     dynamicFields.innerHTML = '';
   }, 2000);
-});
+}
 
 // Sync logic: try to upload when online
-window.addEventListener('online', trySync);
-
 async function trySync() {
   const forms = await getAllLocalForms();
   if (!forms.length) return;
@@ -169,16 +268,8 @@ async function trySync() {
   if (uploadedIds.length) await clearUploadedForms(uploadedIds);
 }
 
-// Optionally, try to sync on page load if online
-if (navigator.onLine) trySync();
-
-const customFieldForm = document.getElementById('custom-field-form');
-const customFieldName = document.getElementById('custom-field-name');
-const customFieldType = document.getElementById('custom-field-type');
-const customFieldOptions = document.getElementById('custom-field-options');
-
-// Show options input only if "select" is chosen
-customFieldType.addEventListener('change', () => {
+// Toggle options field visibility
+function toggleOptionsField() {
   if (customFieldType.value === 'select') {
     customFieldOptions.classList.remove('hidden');
     customFieldOptions.required = true;
@@ -186,9 +277,10 @@ customFieldType.addEventListener('change', () => {
     customFieldOptions.classList.add('hidden');
     customFieldOptions.required = false;
   }
-});
+}
 
-customFieldForm.addEventListener('submit', function(e) {
+// Handle custom field submission
+function handleCustomFieldSubmit(e) {
   e.preventDefault();
   const key = customFieldName.value.trim().toLowerCase().replace(/\s+/g, '_');
   const label = customFieldName.value.trim();
@@ -221,4 +313,7 @@ customFieldForm.addEventListener('submit', function(e) {
   // Reset form
   customFieldForm.reset();
   customFieldOptions.classList.add('hidden');
-});
+}
+
+// Initialize the application
+document.addEventListener('DOMContentLoaded', init);
