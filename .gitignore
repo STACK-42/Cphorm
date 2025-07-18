@@ -7,6 +7,10 @@ __pycache__/
 *.so
 .vscode/
 
+# MAC tracking
+.DS_Store
+.vscode
+
 # Distribution / packaging
 .Python
 build/
