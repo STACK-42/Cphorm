@@ -26,13 +26,14 @@
 
 ---
 
-### Future AI Upgrade  
-🦾 **AI Assistant** will:  
-- Analyze patient status/history  
-- Help diagnose conditions  
-- Suggest treatment advice  
+### Organization Access
+Beyond individual doctor access, Cphorm provides a dedicated login for organizations, enabling them to:
+- Filter Data: Easily filter patient data by various parameters, such as regions or specific diseases.
 
+- Generate Insights: Get general insights and statistical summaries from aggregated health data.
 
+- Predictive Analytics: Utilize ML models to predict spikes in diseases, aiding in proactive health interventions.
 
+- Flexible Data Export: Effortlessly download data in various time windows and regions in CSV or XLSX formats.
 
-===============
+- Treatment Recommendations: Leverage aggregated data to suggest treatment advice, enhancing overall care strategies.

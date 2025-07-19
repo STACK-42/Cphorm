@@ -8,14 +8,16 @@
 
 ---
 
-#### 🧬 Cphorm
+### 🧬 Cphorm
 
 A lightweight, offline-first health data platform designed to empower doctors, field workers, researchers, and NGOs in connectivity-challenged regions. Cphorm enables seamless patient data logging and secure, synchronized access, even when internet access is limited or unavailable
+
 ---
 
 ### What is Cphorm?
 
 Cphorm is your reliable partner for health data collection in the field. Imagine doctors effortlessly logging patient information directly on their devices, even when miles away from a network connection. Cphorm ensures this vital data is securely stored offline and automatically synchronizes when connectivity is restored, providing a streamlined workflow for healthcare providers and essential data for researchers and NGOs. Later, this aggregated, anonymized data can be leveraged for broader health initiatives and insights.
+
 ---
 
 #### 🚀 Key Features
