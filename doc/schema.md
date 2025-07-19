@@ -64,4 +64,3 @@ Here is the database schema in both Markdown table format and as a JSON object:
   ]
 }
 ```
-
