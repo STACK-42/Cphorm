@@ -10,7 +10,7 @@
 
 ### 🧬 Cphorm
 
-A lightweight, offline-first health data platform designed to empower doctors, field workers, researchers, and NGOs in connectivity-challenged regions. Cphorm enables seamless patient data logging and secure, synchronized access, even when internet access is limited or unavailable
+A lightweight, offline-first health data platform designed to empower doctors, field workers, researchers, and NGOs in connectivity-challenged regions. Cphorm enables seamless patient data logging and secure, synchronized access, even when internet access is limited or unavailable.
 
 ---
 
@@ -22,7 +22,7 @@ Cphorm is your reliable partner for health data collection in the field. Imagine
 
 #### 🚀 Key Features
 
-* Dynamic form creation - selecting your own parameters 
+* Dynamic form creation - selecting your parameters 
 
 * Offline data entry & syncing when online
 
@@ -39,72 +39,15 @@ Cphorm is your reliable partner for health data collection in the field. Imagine
 
 * __Data Pipeline__: Pandas,
 
-### 📦 Folder Structure
-
-```bash
-/Cphorm
-├── form/
-│   ├── back-end/
-│   │   ├── app/
-│   │   │   ├── __init__.py
-│   │   │   ├── models.py
-│   │   │   ├── routes.py
-│   │   │   └── utils.py
-│   │   ├── tests/
-│   │   │   └── test_api.py
-│   │   └── requirements.txt
-│   └── front-end/
-│       ├── components/
-│       │   ├── FormBuilder.jsx
-│       │   ├── Dashboard.jsx
-│       │   └── Navbar.jsx
-│       ├── pages/
-│       │   ├── index.jsx
-│       │   └── dashboard.jsx
-│       ├── public/
-│       │   └── favicon.ico
-│       ├── styles/
-│       │   └── globals.css
-│       ├── utils/
-│       │   └── api.js
-│       └── package.json
-├── platform/
-│   ├── analytics/
-│   │   ├── src/
-│   │   │   └── data_generation.py
-│   │   ├── tests/
-│   │   │   └── test_analytics.py
-│   │   ├── notebooks/
-│   │   │   └── main.ipynb
-│   │   └── __init__.py
-│   └── dashboard/
-│       ├── components/
-│       │   └── Chart.js
-│       └── app.py
-├── utils/
-│   └── helpers.py
-├── docs/
-│   └── architecture.md
-└── README.md
-```
-
+### 📦 Repositories 
+1. [Cphrom_API](https://github.com/STACK-42/Cphorm_be) This is the backend API for the Cphrom Project
+2. [Cphorm_Frontend](https://github.com/STACK-42/Cphorm_fe) The Frontend and Dashboard for the Cphorm Project
 
 ### Prerequisites
 
-- Python 3.10+  
-  (Required for analytics, data generation, and backend scripts)
-- Node.js (Recommended v18+ for frontend)
-- pip (Python package manager)
-- npm or yarn (Node.js package manager)
-- MongoDB (for backend database)
 
 ### Setup
-
-```bash
-git clone https://github.com/STACK-42/Cphorm.git
-cd cphorm
-```
-Then follow setup steps for /frontend and /backend in their respective READMEs.
+Head to the repositories for their corresponding setups 
 
 ### 📊 Use Cases
 
