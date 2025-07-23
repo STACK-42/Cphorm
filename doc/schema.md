@@ -32,6 +32,7 @@ Here is the database schema in both Markdown table format and as a JSON object:
 ---
 
 ## JSON Object Representation
+[![JSON](https://img.shields.io/badge/dynamic/json)](https://www.python.org/)
 
 ```json
 {
