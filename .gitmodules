@@ -1,5 +1,5 @@
 [submodule "frontend"]
-	path = brontend
+	path = frontend
 	url = https://github.com/STACK-42/Cphorm-Frontend.git
 [submodule "backend"]
 	path = backend
