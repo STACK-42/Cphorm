@@ -20,7 +20,7 @@ Cphorm is your reliable partner for health data collection in the field. Imagine
 
 ---
 
-#### 🚀 Key Features
+#### Key Features
 
 * Dynamic form creation - selecting your parameters 
 
@@ -33,15 +33,14 @@ Cphorm is your reliable partner for health data collection in the field. Imagine
 ### 🛠️ Tech Stack
 * __Frontend__: React / Next.js / Tailwind CSS
 
-* __Backend__: Flask / Node.js
+* __Backend__: Supabase / Hono 
 
-* __Database__: Mongo DB
+* __Database__: PostgreSQL
 
-* __Data Pipeline__: Pandas,
 
-### 📦 Repositories 
+###  Repositories 
 1. [Cphrom_API](https://github.com/STACK-42/Cphorm_be) This is the backend API for the Cphrom Project
-2. [Cphorm_Frontend](https://github.com/STACK-42/Cphorm_fe) The Frontend and Dashboard for the Cphorm Project
+2. [Cphorm_Frontend](https://github.com/STACK-42/Cphorm-Frontend.git) The Frontend and Dashboard for the Cphorm Project
 
 ### Prerequisites
 
@@ -49,7 +48,7 @@ Cphorm is your reliable partner for health data collection in the field. Imagine
 ### Setup
 Head to the repositories for their corresponding setups 
 
-### 📊 Use Cases
+###  Use Cases
 
 - Health survey campaigns
 
