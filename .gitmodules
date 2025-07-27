@@ -1,6 +1,6 @@
-[submodule "frontend"]
-	path = frontend
-	url = https://github.com/STACK-42/Cphorm_fe.git
-[submodule "backend"]
-	path = backend
+[submodule "Frontend"]
+	path = Frontend
+	url = https://github.com/STACK-42/Cphorm-Frontend.git
+[submodule "Fackend"]
+	path = Backend
 	url = https://github.com/STACK-42/Cphorme_be.git
