@@ -20,7 +20,7 @@ Cphorm is your reliable partner for health data collection in the field. Imagine
 
 ---
 
-#### Key Features
+## Key Features
 
 * Dynamic form creation - selecting your parameters 
 
@@ -30,7 +30,7 @@ Cphorm is your reliable partner for health data collection in the field. Imagine
 
 * Role-based access (doctors, organizations)
 
-### 🛠️ Tech Stack
+###  Tech Stack
 * __Frontend__: React / Next.js / Tailwind CSS
 
 * __Backend__: Supabase / Hono 
@@ -48,7 +48,7 @@ Cphorm is your reliable partner for health data collection in the field. Imagine
 ### Setup
 Head to the repositories for their corresponding setups 
 
-###  Use Cases
+### Use Cases
 
 - Health survey campaigns
 
